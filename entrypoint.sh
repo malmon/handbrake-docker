@@ -16,9 +16,8 @@ do
       sleep 5
     else
       echo Starting to rip $FILE
-      touch $FILE
       sleep 5
-      HandBrakeCLI -f av_mkv --main-feature --all-audio --all-subtitles -i /dev/dvd -o /dvd/$LABEL
+      HandBrakeCLI -f av_mkv --main-feature --all-audio --all-subtitles -i /dev/dvd -o /dvd/$FILE
       echo Finished Ripping $FILE
       eject /dev/dvd
       sleep 5
