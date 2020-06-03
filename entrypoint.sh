@@ -9,16 +9,19 @@ do
   else
     echo Found Disk Label: $LABEL
     FILE=/dvd/$LABEL.mkv
-    if [ -f "$FILE" ] 
+    COMPLETE=/fished/$LABEL.mkv
+    if [ -f "$COMPLETE" ] 
     then
-      echo $FILE already exists skipping
+      echo $COMPLETE already exists skipping
       eject /dev/dvd
       sleep 5
     else
       echo Starting to rip $FILE
       sleep 5
       HandBrakeCLI -f av_mkv --main-feature --all-audio --all-subtitles -i /dev/dvd -o $FILE
-      echo Finished Ripping $FILE
+      echo Moving $FILE to $COMPLETE
+      mv $FILE $COMPLETE
+      echo Finished Ripping $COMPLETE
       eject /dev/dvd
       sleep 5
     fi
