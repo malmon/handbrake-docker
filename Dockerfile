@@ -3,7 +3,7 @@ FROM archlinux
 RUN pacman --noconfirm -Sy libdvdcss handbrake-cli
 
 RUN mkdir /dvd  && \
-    mkdir /fished
+    mkdir /finish
 
 COPY entrypoint.sh /entrypoint.sh
 
