@@ -9,7 +9,7 @@ do
   else
     echo Found Disk Label: $LABEL
     FILE=/dvd/$LABEL.mkv
-    COMPLETE=/fished/$LABEL.mkv
+    COMPLETE=/finish/$LABEL.mkv
     if [ -f "$COMPLETE" ] 
     then
       echo $COMPLETE already exists skipping
